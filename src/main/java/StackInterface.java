@@ -1,4 +1,4 @@
-
+/**Stack Interface*/
 public interface StackInterface<T> {
     void push(T item);
     T pop();
