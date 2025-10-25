@@ -1,4 +1,4 @@
-
+/** Main meathod for calculator*/
 public class Calculator {
 	public static void main(String[] args) {
 		LinkedStack calcPostfix = new LinkedStack();

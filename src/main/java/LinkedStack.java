@@ -16,7 +16,7 @@ public class LinkedStack implements StackInterface<Character> {
 		top = null;
 	}
 
-	// StackInterface methods
+	/** StackInterface methods */
 	@Override
 	public void push(Character item) {
 		Node node = new Node(item);
@@ -53,7 +53,7 @@ public class LinkedStack implements StackInterface<Character> {
 		{
 			char nextChar = infix.charAt(i);
 			if (Character.isLetterOrDigit(nextChar)) {
-				//Append next char to postfix
+				/**Append next char to postfix*/
 				postfix += nextChar;
 			} else {
 				switch (nextChar)
@@ -78,7 +78,7 @@ public class LinkedStack implements StackInterface<Character> {
 						operatorStack.pop();
 					}
 					break;
-				default: break; // Ignore unexpected characters
+				default: break; /** Ignore unexpected characters*/
 				}
 			}
 		}
@@ -103,7 +103,7 @@ public class LinkedStack implements StackInterface<Character> {
 		case '(' :
 		case ')' :
 			return 0;
-		default: return -1;// Ignore unexpected characters*/
+		default: return -1;/** Ignore unexpected characters*/
 		}
 	}
 }

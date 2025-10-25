@@ -10,7 +10,7 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
 		topIndex = -1;
 	}
 
-	// Push item onto the stack
+	/** Push item onto the stack*/
 	@Override
 	public void push(T item) {
 		if (topIndex + 1 == array.length) {
@@ -19,7 +19,7 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
 		array[++topIndex] = item;
 	}
 
-	// Pop item from the stack
+	/** Pop item from the stack*/
 	@Override
 	public T pop() {
 		T item = array[topIndex];
@@ -28,20 +28,20 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
 		return item;
 	}
 
-	// Peek at top item
+	/** Peek at top item*/
 	@Override
 	public T peek() {
 		if (isEmpty()) throw new RuntimeException("Empty Stack");
 		return array[topIndex];
 	}
 
-	// Check if stack is empty
+	/** Check if stack is empty*/
 	@Override
 	public boolean isEmpty() {
 		return topIndex == -1;
 	}
 
-	// Resize the internal array
+	/** Resize the internal array*/
 	@SuppressWarnings("unchecked")
 	private void resize(int newCapacity) {
 		T[] newArray = (T[]) new Object[newCapacity];
@@ -60,7 +60,7 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
 		int operandTwo = -1;
 		int operandOne = -1;
 		int result;
-		// Evaluates a postfix expression. 
+		/** Evaluates a postfix expression.*/ 
 		ResizableArrayStack<Integer> valueStack = new ResizableArrayStack<>();
 		int n = postfix.length();
 		for (int i=0; i<n; i++)
@@ -113,7 +113,7 @@ public class ResizableArrayStack<T> implements StackInterface<T> {
 				result = (int) Math.pow(operandOne, operandTwo);
 				valueStack.push(result);
 				break;
-			default: break; // Ignore unexpected characters 
+			default: break; /** Ignore unexpected characters*/ 
 			}
 		}
 		return valueStack.peek();
